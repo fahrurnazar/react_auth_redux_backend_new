@@ -1,0 +1,25 @@
+GET http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJGYWhydXJyb2ppIiwiZW1haWwiOiJmYWhydXJyb2ppQGhvdG1haWwuY29tIiwiaWF0IjoxNjU1MTMxOTU4LCJleHAiOjE2NTUxMzE5NzN9.5ONrsddP9_ueUzQPT92BQJ22Cw8_JS8FtFAFx_Daekk
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name":"Fahrurroji",
+    "email":"fahrurroji@hotmail.com",
+    "password":"1212334",
+    "confPassword":"1212334 ds"
+}
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "name":"Fahrurroji",
+    "email":"fahrurroji@hotmail.com",
+    "password":"1212334"
+}
+
+###
+GET http://localhost:5000/token
