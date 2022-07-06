@@ -2,13 +2,14 @@ import express from "express";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import db from "./config/Database.js";
+import db from "./models/index.js";
 import router from "./routes/index.js";
 dotenv.config();
 const app = express();
 
 try {
-  await db.authenticate();
+  await db.sequelize.authenticate();
+  db.sequelize.sync();
   console.log("Connection has been established successfully.");
 } catch (error) {
   console.error("Unable to connect to the database:", error);
